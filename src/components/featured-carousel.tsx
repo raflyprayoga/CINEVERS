@@ -25,9 +25,9 @@ export function FeaturedCarousel({movies}:{movies:Movie[]}){
         <div className="mt-9 flex items-center gap-2 text-[11px] text-zinc-400"><span className="rounded border border-white/20 px-1.5 py-0.5 font-bold tracking-wider">4K</span><span className="rounded border border-white/20 px-1.5 py-0.5 font-bold">5.1</span> A premium pick for tonight</div>
       </div>
       <div className="absolute bottom-5 right-5 flex items-center gap-3 text-xs text-zinc-300 md:bottom-7 md:right-10">
-        <button type="button" aria-label="Previous featured film" onClick={()=>change(-1)} className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-black/35 backdrop-blur transition hover:bg-white/15"><ChevronLeft size={18}/></button>
-        <span className="tabular-nums">{String(index+1).padStart(2,"0")} <span className="mx-1 inline-block h-px w-8 bg-white/50 align-middle"/> {String(movies.length).padStart(2,"0")}</span>
-        <button type="button" aria-label="Next featured film" onClick={()=>change(1)} className="grid h-9 w-9 place-items-center rounded-full border border-white/15 bg-black/35 backdrop-blur transition hover:bg-white/15"><ChevronRight size={18}/></button>
+        <button type="button" aria-label="Previous featured film" onClick={()=>change(-1)} className="grid h-10 w-10 place-items-center rounded-full border-2 border-[#e50945] bg-black/80 text-white shadow-[0_0_18px_#e5094530] backdrop-blur transition hover:bg-[#e50945]"><ChevronLeft size={19}/></button>
+        <span aria-live="polite" className="text-xl font-black tracking-tight tabular-nums">{String(index+1).padStart(2,"0")}</span>
+        <button type="button" aria-label="Next featured film" onClick={()=>change(1)} className="grid h-10 w-10 place-items-center rounded-full border-2 border-[#e50945] bg-black/80 text-white shadow-[0_0_18px_#e5094530] backdrop-blur transition hover:bg-[#e50945]"><ChevronRight size={19}/></button>
       </div>
     </div>
   </section>;
