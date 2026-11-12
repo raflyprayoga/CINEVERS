@@ -5,10 +5,10 @@ export function notifyWatchlistError(error:unknown){
   const detail=describeError(error);
   const missingSchema=detail.includes("PGRST205")||detail.includes("Could not find the table 'public.profiles'");
   if(missingSchema){
-    console.warn("Cineverse database schema is not installed. Apply supabase/migrations/202611120001_cineverse.sql, then 202611120002_repair_existing_profiles.sql.");
-  }else console.error("Cineverse My List error:",detail);
+    console.warn("Cinevers database schema is not installed. Apply supabase/migrations/202611120001_cineverse.sql, then 202611120002_repair_existing_profiles.sql.");
+  }else console.error("Cinevers My List error:",detail);
   const message=missingSchema
-    ?"Database Cineverse belum disiapkan. Jalankan migrasi 001 lalu 002 di project Supabase yang dipakai aplikasi."
+    ?"Database Cinevers belum disiapkan. Jalankan migrasi 001 lalu 002 di project Supabase yang dipakai aplikasi."
     :`My List gagal disimpan: ${detail}`;
   if(typeof window!=="undefined")window.dispatchEvent(new CustomEvent("cineverse-toast",{detail:message}));
 }

@@ -22,7 +22,7 @@ export function MovieRow({ title,movies,label }:{title:string;movies:Movie[];lab
   const move=(direction:-1|1)=>{const element=rail.current;if(element)element.scrollBy({left:direction*(element.clientWidth*.8),behavior:"smooth"})};
   async function addToList(movie:Movie){try{const result=await requestWatchlistAdd(movie);if(result==="signed-out"){router.push("/login?next=%2Fmy-list");return}if(result==="exists"){notifyWatchlistExists(movie.title);return}window.dispatchEvent(new Event("cineverse-list-change"));notifyWatchlistAdded(movie.title)}catch(error){notifyWatchlistError(error)}}
   return <section className="mb-10">
-    <div className="mb-4 px-5 md:px-10"><p className="mb-1 text-[10px] font-bold uppercase tracking-[.22em] text-[#e50945]">{label??"Cineverse picks"}</p><h2 className="text-xl font-bold tracking-tight md:text-2xl">{title}</h2></div>
+    <div className="mb-4 px-5 md:px-10"><p className="mb-1 text-[10px] font-bold uppercase tracking-[.22em] text-[#e50945]">{label??"Cinevers picks"}</p><h2 className="text-xl font-bold tracking-tight md:text-2xl">{title}</h2></div>
     <div className="relative">
     <div ref={rail} className="no-scrollbar flex gap-3 overflow-x-auto scroll-smooth px-5 pb-3 md:gap-4 md:px-10">
       {movies.map((movie,i)=><motion.div key={`${movie.media_type??"movie"}-${movie.id}`} initial={{opacity:0,y:10}} whileInView={{opacity:1,y:0}} viewport={{once:true}} transition={{delay:Math.min(i*.04,.2)}} className="group relative w-[145px] shrink-0 md:w-[190px]">

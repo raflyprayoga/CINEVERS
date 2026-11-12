@@ -38,9 +38,9 @@ export function Navbar(){
   },[]);
   return <header className="fixed inset-x-0 top-4 z-50 px-3 sm:px-6">
     <div className={`relative mx-auto flex h-[76px] max-w-[1600px] items-center rounded-2xl border px-4 transition-all duration-300 sm:px-8 ${scrolled?"border-white/10 bg-[#09090d]/55 shadow-[0_10px_38px_rgba(0,0,0,.35)] backdrop-blur-2xl":"border-transparent bg-transparent shadow-none backdrop-blur-0"}`}>
-      <Link href="/" aria-label="Cineverse home" className="flex shrink-0 items-center gap-2.5 text-white">
+      <Link href="/" aria-label="Cinevers home" className="flex shrink-0 items-center gap-2.5 text-white">
         <Image src="/cineverse-mark.png" alt="" width={52} height={52} priority className="h-12 w-12 rounded-full object-cover"/>
-        <span className="brand-wordmark hidden text-[13px] text-white sm:block">CINE<span className="text-[#e50945]">VERSE</span></span>
+        <span className="brand-wordmark hidden text-[13px] text-white sm:block">CINE<span className="text-[#e50945]">VERS</span></span>
       </Link>
 
       <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 md:flex">
